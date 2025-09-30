@@ -1,0 +1,30 @@
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -lha'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+alias g='/c/Program\ Files/Vim/vim91/gvim.exe'
+alias gvim='/c/Program\ Files/Vim/vim91/gvim.exe'
+alias vi='/c/Program\ Files/Vim/vim91/vim.exe'
+
+alias q='exit'
+
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gs='git status'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+
+alias gdiff='git diff'
+alias gpl='git pull'
+alias gcl='git clone'
+
+run_verilog() {
+    "/c/iverilog/bin/iverilog.exe" -o dsn "$@" && "/c/iverilog/bin/vvp.exe" dsn && "/c/iverilog/gtkwave/bin/gtkwave.exe" wv.vcd
+}
+
