@@ -1,4 +1,5 @@
 alias ls='ls --color=auto'
+alias l='ls'
 alias ll='ls -lh'
 alias la='ls -lha'
 alias ..='cd ..'
@@ -25,6 +26,11 @@ alias gpl='git pull'
 alias gcl='git clone'
 
 run_verilog() {
-    "/c/iverilog/bin/iverilog.exe" -o dsn "$@" && "/c/iverilog/bin/vvp.exe" dsn && "/c/iverilog/gtkwave/bin/gtkwave.exe" wv.vcd
+    "/c/iverilog/bin/iverilog.exe" -o dsn "$@" && \ 
+    "/c/iverilog/bin/vvp.exe" dsn
+
+    if [[ "$*" == *"-gtk"* ]]; then
+        "/c/iverilog/gtkwave/bin/gtkwave.exe" wv.vcd
+    fi
 }
 
